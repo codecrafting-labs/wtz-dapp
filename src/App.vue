@@ -4,8 +4,9 @@
       <nav>
         <img src="./assets/logo.png" alt="" />
       </nav>
+      <wallet-connect></wallet-connect>
     </header>
-    <main class="container" >
+    <main class="container">
       <home-page></home-page>
     </main>
     <footer>
@@ -16,10 +17,12 @@
 
 <script>
 import HomePage from "./components/Home.vue";
+import WalletConnect from "./components/WalletConnect.vue";
 export default {
   name: "App",
   components: {
     HomePage,
+    WalletConnect,
   },
 };
 </script>
@@ -34,6 +37,7 @@ export default {
   outline: none;
   font-family: "Roboto", sans-serif;
   color: #fff;
+  transition: 0.3s ease all;
 }
 
 .subtle-color {
@@ -81,6 +85,10 @@ small {
   line-height: 14px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .button {
   border: 0;
   min-width: 140px;
@@ -91,6 +99,7 @@ small {
   font-size: 16px;
   line-height: 19px;
   font-family: "Roboto";
+  padding: 14px 24px;
 }
 
 .btn-outline {
@@ -100,6 +109,7 @@ small {
     radial-gradient(circle at top left, #1161fe, #5343ba);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  padding: 0;
 }
 
 footer {
@@ -125,27 +135,42 @@ footer {
 }
 
 @media (min-width: 576px) {
-  .container, .container-sm {
+  .container,
+  .container-sm {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container, .container-sm, .container-md {
+  .container,
+  .container-sm,
+  .container-md {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .container, .container-sm, .container-md, .container-lg {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container, .container-sm, .container-md, .container-lg, .container-xl {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
     max-width: 1140px;
   }
+}
+
+.d-flex {
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .row {

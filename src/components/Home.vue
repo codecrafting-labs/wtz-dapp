@@ -1,7 +1,11 @@
 <template>
   <div>
+    <dex-mobile-swipe
+      :dex="dexTab"
+      :handleClick="handleTabClick"
+    ></dex-mobile-swipe>
     <div class="row">
-      <div class="col-md-6">
+      <div v-if="dexTab !== 'dex'" class="col-lg-6">
         <h1>
           Meet WTZ, a new FA2 token fully collateralized by XTZ, fully fungible,
           and oh so rewarding.
@@ -28,8 +32,15 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="row justify-content-md-end">
+      <div class="col-lg-6 lg-dex">
+        <div class="row justify-content-center justify-content-lg-end">
+          <div class="col-md-10">
+            <dex></dex>
+          </div>
+        </div>
+      </div>
+      <div v-if="dexTab === 'dex'" class="col-lg-6">
+        <div class="row justify-content-center justify-content-lg-end">
           <div class="col-md-10">
             <dex></dex>
           </div>
@@ -41,9 +52,27 @@
 
 <script>
 import Dex from "./Dex.vue";
+import DexMobileSwipe from "./DexMobileSwipe.vue";
 export default {
-  components: { Dex },
+  components: { Dex, DexMobileSwipe },
   name: "HomePage",
+  data() {
+    return {
+      dexTab: "",
+    };
+  },
+  created() {
+    window.addEventListener("resize", (e) => {
+      if (e.target.innerWidth > 992) {
+        this.dexTab = "";
+      }
+    });
+  },
+  methods: {
+    handleTabClick() {
+      this.dexTab = this.dexTab !== "dex" ? "dex" : "home";
+    },
+  },
 };
 </script>
 
@@ -51,5 +80,17 @@ export default {
 p.text.subtle-color {
   font-size: 20px;
   line-height: 25px;
+}
+
+@media (max-width: 992px) {
+  .lg-dex {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mb-dex {
+    display: none;
+  }
 }
 </style>
