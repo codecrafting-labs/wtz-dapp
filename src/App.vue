@@ -24,6 +24,9 @@ export default {
     HomePage,
     WalletConnect,
   },
+  created() {
+    this.$store.dispatch("checkWalletConnected");
+  },
 };
 </script>
 

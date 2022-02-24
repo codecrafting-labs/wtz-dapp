@@ -34,7 +34,7 @@
               </linearGradient>
             </defs>
           </svg>
-          <p>{{ dex === "dex" ? "Back" : "DEX" }}</p>
+          <p>{{ dex === "dex" ? "Back" : "Swap" }}</p>
         </button>
       </div>
     </div>
