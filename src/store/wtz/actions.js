@@ -1,6 +1,6 @@
-import tzkt from "./../../utils/tzkt";
-import coingecko from "./../../utils/coingecko";
-import { getWalletContract } from "./../../utils/tezos";
+import tzkt from "@/utils/tzkt";
+import coingecko from "@/utils/coingecko";
+import { getWalletContract } from "@/utils/tezos";
 import { BigNumber } from "bignumber.js";
 
 export default {
