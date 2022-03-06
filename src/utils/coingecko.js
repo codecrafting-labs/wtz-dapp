@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const makeReqest = async (uri, params = {}) => {
-  return axios.get(`${process.env.VUE_APP_COINGECKO_API_URL}${uri}`, {
+  return axios.get(`${"https://api.coingecko.com/api"}${uri}`, {
     params,
   });
 };

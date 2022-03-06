@@ -1,4 +1,5 @@
 import { NetworkType } from "@airgap/beacon-sdk";
+import BigNumber from "bignumber.js";
 import actions from "./actions";
 import mutations from "./mutations";
 
@@ -7,6 +8,8 @@ export default {
     connected: false,
     network: NetworkType.MAINNET,
     pkh: "",
+    balance: new BigNumber(0),
+    updateBalanceInt: null,
   },
   actions,
   mutations,

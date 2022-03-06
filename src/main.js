@@ -1,7 +1,16 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import store from './store'
+import { createApp } from "vue";
+import VueNumberFormat from "vue-number-format";
+import App from "./App.vue";
+import store from "./store";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(store).mount('#app')
+app
+  .use(VueNumberFormat, {
+    prefix: "",
+    decimal: ".",
+    thousand: ",",
+    precision: 4,
+  })
+  .use(store)
+  .mount("#app");

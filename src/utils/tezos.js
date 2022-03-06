@@ -1,6 +1,6 @@
 import { NetworkType } from "@airgap/beacon-sdk";
 import { BeaconWallet } from "@taquito/beacon-wallet";
-import { MichelCodecPacker } from "@taquito/taquito";
+import { MichelCodecPacker, TezosToolkit } from "@taquito/taquito";
 import { Tzip12Module } from "@taquito/tzip12";
 import { Tzip16Module } from "@taquito/tzip16";
 
@@ -45,4 +45,4 @@ const getWalletContract = async (address) => {
   return Tezos.wallet.at(address);
 };
 
-export { wallet, getActiveAccount, requestPermissions, clearActiveAccount, getWalletContract };
+export { wallet, getActiveAccount, requestPermissions, clearActiveAccount, getWalletContract, Tezos };
