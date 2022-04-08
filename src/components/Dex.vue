@@ -245,8 +245,9 @@ export default {
     },
 
     handleSwitch() {
-      this.inputValue = null;
-      this.outputValue = null;
+      const tempValue = this.inputValue;
+      this.inputValue = this.outputValue;
+      this.outputValue = tempValue;
       if (this.action.toLowerCase() === "wrap") {
         this.action = "Unwrap";
       } else {
