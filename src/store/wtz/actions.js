@@ -64,6 +64,8 @@ export default {
     try {
       commit("updateWtzLoading", true);
 
+      await dispatch("connectWallet");
+
       const tx = await wtzSwap.methods
         .wrap(rootState.wallet.pkh)
         .send({ amount: amount, mutez: true });
@@ -87,6 +89,8 @@ export default {
 
     try {
       commit("updateWtzLoading", true);
+
+      await dispatch("connectWallet");
 
       const tx = await wtzSwap.methods
         .unwrap(amount, rootState.wallet.pkh)
