@@ -1,13 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@airgap/beacon-sdk': ^2.3.11
+  '@airgap/beacon-sdk': ^2.3.12
   '@babel/core': ^7.12.16
   '@babel/eslint-parser': ^7.12.16
-  '@taquito/beacon-wallet': ^12.0.1
-  '@taquito/taquito': ^12.0.1
-  '@taquito/tzip12': ^12.0.1
-  '@taquito/tzip16': ^12.0.1
+  '@taquito/beacon-wallet': ^12.0.3
+  '@taquito/taquito': ^12.0.3
+  '@taquito/tzip12': ^12.0.3
+  '@taquito/tzip16': ^12.0.3
   '@tezos-domains/taquito-client': ^1.12.0
   '@vue/cli-plugin-babel': ~5.0.0
   '@vue/cli-plugin-eslint': ~5.0.0
@@ -30,12 +30,12 @@ specifiers:
   webpack: ^5.69.1
 
 dependencies:
-  '@airgap/beacon-sdk': 2.3.11
-  '@taquito/beacon-wallet': 12.0.1
-  '@taquito/taquito': 12.0.1
-  '@taquito/tzip12': 12.0.1
-  '@taquito/tzip16': 12.0.1
-  '@tezos-domains/taquito-client': 1.12.0_e8823de45262b5664089e5f5d7031ff4
+  '@airgap/beacon-sdk': 2.3.12
+  '@taquito/beacon-wallet': 12.0.3
+  '@taquito/taquito': 12.0.3
+  '@taquito/tzip12': 12.0.3
+  '@taquito/tzip16': 12.0.3
+  '@tezos-domains/taquito-client': 1.12.0_a32eb4540e11d07a02192aa5b7978a43
   axios: 0.26.1
   bignumber.js: 9.0.2
   buffer: 6.0.3
@@ -71,8 +71,8 @@ packages:
       js-message: 1.0.7
     dev: true
 
-  /@airgap/beacon-sdk/2.3.11:
-    resolution: {integrity: sha512-9YeA/CLGO5dRbVfuPZx0Daj6bOWmnkVhMhHYRR1iV0fe7THq3GqiukYvFsBIxCi4vjgdMp/04occZxsHIyCvtw==}
+  /@airgap/beacon-sdk/2.3.12:
+    resolution: {integrity: sha512-SZIaPiJjYHq5FIbpldHcPuMJxntjNfi+Iyni1apODh6hdgsJK8wRkveBd/b9LvmRSFnAENP3Zrbtayegfch8Ow==}
     dependencies:
       '@types/chrome': 0.0.115
       '@types/libsodium-wrappers': 0.7.7
@@ -1456,18 +1456,18 @@ packages:
     resolution: {integrity: sha512-WfqfX/eXGiAd3RJe4VU2snh/ZPwtSjLG4ynQ/vYzvghTh7dHFcI1wl+nrkWG6lGhukOxOsUHfv8dUXr58D0ayg==}
     dev: false
 
-  /@taquito/beacon-wallet/12.0.1:
-    resolution: {integrity: sha512-DKWy+i/59WjBsXRySJY1fAV+fsptjQzj7VF+qEExqj63ewA5zhelnVn2J2m8JzEQektjs6p9UU+FwnniOkv4Zw==}
+  /@taquito/beacon-wallet/12.0.3:
+    resolution: {integrity: sha512-cu3CWPW5h1pBY71opsroU+Nwq9rApMNZH3VfGlz1xPkOFtF4uuo7baVmc7y1NamEKdNfc8hM/XH9EYDRHCIlcg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@airgap/beacon-sdk': 2.3.11
-      '@taquito/taquito': 12.0.1
+      '@airgap/beacon-sdk': 2.3.12
+      '@taquito/taquito': 12.0.3
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/http-utils/12.0.1:
-    resolution: {integrity: sha512-nSE/MkjpiBI9G0uvn5tg+Ts2GFFdlIQO4K2q1Cz5vzutCybhQbPhkFnHr0/mYcCQ2TBzTI/FD2ARIR8/LYo5Cg==}
+  /@taquito/http-utils/12.0.3:
+    resolution: {integrity: sha512-h09czF9j1xTEKtF+kRzvUgW5kJxnG6LtaBmFXY57rJFo4Q9Y+sE2tWIschkH0bNWXeMBXCqwaDDyGaXC2E3agg==}
     engines: {node: '>=6.0.0'}
     dependencies:
       axios: 0.26.1
@@ -1475,87 +1475,87 @@ packages:
       - debug
     dev: false
 
-  /@taquito/local-forging/12.0.1:
-    resolution: {integrity: sha512-pQfrfZnjA3pH17QOELxzkKQkPZvHvreepl9H+4/5hzrcrA8XCTfKiSG61kB9OGPlMunFwk0Uod20pwovw70E4Q==}
+  /@taquito/local-forging/12.0.3:
+    resolution: {integrity: sha512-VFn9qm3fXjjNxLOwlwVmNKPEDS/u9HTxNAwQIB3bRn4ZSn51o10V5EM6ouQZNV0rvH85xCHQj7WbIXugBmfwRg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@taquito/utils': 12.0.1
+      '@taquito/utils': 12.0.3
       bignumber.js: 9.0.2
     dev: false
 
-  /@taquito/michel-codec/12.0.1:
-    resolution: {integrity: sha512-BGlLI0fWwuufVAMdYwMhwNkG7sWzy6fkUDv2LaF/ji02su50xeE/4gSzZIv251cM/667drB9icoyq9l9jPfhIw==}
+  /@taquito/michel-codec/12.0.3:
+    resolution: {integrity: sha512-eAiV+/Lir6cJVbOA3xCVtGnkko243ctSY5strxUFeHcl8ZrI9pHjyZADPQexfPkLbteW8Nb3Imxu+5FrHLj0IA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@taquito/michelson-encoder/12.0.1:
-    resolution: {integrity: sha512-mPtwU7zLS2ds0LPx4bMr1dfDxGeD/byZDbcmvqtnU84NiKrLTV6e8+xEcHYilsZFHTKNoxOCgR9b9xfBs+8lYQ==}
+  /@taquito/michelson-encoder/12.0.3:
+    resolution: {integrity: sha512-uK7QR0ZbLeYrYmJOtsqBWKR6obGJ0woN8P1ZwsJTnMkMyVkLBmY1b1dHpZzpPzZVDQjKxzoV3Oi6tWkLuho7PQ==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@taquito/rpc': 12.0.1
-      '@taquito/utils': 12.0.1
+      '@taquito/rpc': 12.0.3
+      '@taquito/utils': 12.0.3
       bignumber.js: 9.0.2
       fast-json-stable-stringify: 2.1.0
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/rpc/12.0.1:
-    resolution: {integrity: sha512-H1p7Q94EhQUyuevm0iAiSE4rZ0TwMSf9iLaMb7mIar6PIUzYVoGIU2Irc23kN4ZB8J3+8SXAwo2z3PTQJzFf4Q==}
+  /@taquito/rpc/12.0.3:
+    resolution: {integrity: sha512-HPgnKYzFmt/Ys+E6KT8emior4dGmOqgdbCwJFMmKcReVFn21K7zaifdBGx5XcPIu12XEMShIEs6xGyHLOr0tGw==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@taquito/http-utils': 12.0.1
-      '@taquito/utils': 12.0.1
+      '@taquito/http-utils': 12.0.3
+      '@taquito/utils': 12.0.3
       bignumber.js: 9.0.2
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/taquito/12.0.1:
-    resolution: {integrity: sha512-Z4swU38ZqaHENwNmE/WAcb2n0Mpi08ZgujuwM7uNYDc9a5NQa/ghYOaVIK9Axi9VZ0wQpoZY6x0spjSg32LsaA==}
+  /@taquito/taquito/12.0.3:
+    resolution: {integrity: sha512-D/Us8ln1xAHu1WQy5KK0kjjQY3EHAP165EZfHSABibl1G1WgcQKLFsTFUec7XLx2EPGpIFclrGYO19Zl+SYVhA==}
     engines: {node: '>=6.0.0'}
     requiresBuild: true
     dependencies:
-      '@taquito/http-utils': 12.0.1
-      '@taquito/local-forging': 12.0.1
-      '@taquito/michel-codec': 12.0.1
-      '@taquito/michelson-encoder': 12.0.1
-      '@taquito/rpc': 12.0.1
-      '@taquito/utils': 12.0.1
+      '@taquito/http-utils': 12.0.3
+      '@taquito/local-forging': 12.0.3
+      '@taquito/michel-codec': 12.0.3
+      '@taquito/michelson-encoder': 12.0.3
+      '@taquito/rpc': 12.0.3
+      '@taquito/utils': 12.0.3
       bignumber.js: 9.0.2
       rxjs: 6.6.7
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/tzip12/12.0.1:
-    resolution: {integrity: sha512-2n6lmQHVFMTYH3jsyeuDTRrWYU/pqIbHuaCu80gpLKpc7dDGaXCY/bC2wlorzFJ4SDPCPcgbB+zUF+4IiK8PQw==}
+  /@taquito/tzip12/12.0.3:
+    resolution: {integrity: sha512-nU594iJc6bDXajTG33gpFEUK4yAldQnVKrQeesK13wG2B5zlGn3tFPWhLkkvrWpjR2LjayLCqlyPnFXJ02IyWg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@taquito/michelson-encoder': 12.0.1
-      '@taquito/taquito': 12.0.1
-      '@taquito/tzip16': 12.0.1
+      '@taquito/michelson-encoder': 12.0.3
+      '@taquito/taquito': 12.0.3
+      '@taquito/tzip16': 12.0.3
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/tzip16/12.0.1:
-    resolution: {integrity: sha512-RJRTvLbH7JDKFGFsC0IdHCSFUwfH6C8k7BIucPKDPtptXz9Fg7qzK+gUVQNypjiPVuRE0k7Co+h0Vq3w78S3aw==}
+  /@taquito/tzip16/12.0.3:
+    resolution: {integrity: sha512-EojUa0zCma8hXudKxWE+O4kuvHIjQQPZPmzxey5/13QVDb1auIW66GdZWNpkMlqrbQUnnmWXEkSjY1oiGiPdBg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@taquito/http-utils': 12.0.1
-      '@taquito/michelson-encoder': 12.0.1
-      '@taquito/rpc': 12.0.1
-      '@taquito/taquito': 12.0.1
-      '@taquito/utils': 12.0.1
+      '@taquito/http-utils': 12.0.3
+      '@taquito/michelson-encoder': 12.0.3
+      '@taquito/rpc': 12.0.3
+      '@taquito/taquito': 12.0.3
+      '@taquito/utils': 12.0.3
       bignumber.js: 9.0.2
       crypto-js: 4.1.1
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@taquito/utils/12.0.1:
-    resolution: {integrity: sha512-ENV7N+HS56xw8FUzUoOpZR0kP0MqTKWQa4oelScgIoXfyKEA9uuIXTUASvocW4k0j+oqr+1Yxphfcvc109Z+0A==}
+  /@taquito/utils/12.0.3:
+    resolution: {integrity: sha512-9ds6Ke1r71u6ShHsNGkT0RJhgs0sOLkEGzTkuZ6O7/2w+o22vedXxBFcUAyVOrrAY8uPTHLPjSqK16LPC92Nog==}
     engines: {node: '>=6.0.0'}
     dependencies:
       '@stablelib/blake2b': 1.0.1
@@ -1574,7 +1574,7 @@ packages:
       idna-uts46-hx: 3.4.0
     dev: false
 
-  /@tezos-domains/manager/1.12.0_e8823de45262b5664089e5f5d7031ff4:
+  /@tezos-domains/manager/1.12.0_a32eb4540e11d07a02192aa5b7978a43:
     resolution: {integrity: sha512-o5z/L6WzRN3CrNoMtLEHGWod9TvsqbXWf1rLGf7x0YuYfWEwO4pj+/uEa/P1GxDVtJUVluhL62oz5WDe4yX+NQ==}
     peerDependencies:
       '@taquito/michel-codec': '>=8.1.0 <12.0.0'
@@ -1582,9 +1582,9 @@ packages:
       '@taquito/rpc': '>=8.1.0 <12.0.0'
       '@taquito/taquito': '>=8.1.0 <12.0.0'
     dependencies:
-      '@taquito/taquito': 12.0.1
+      '@taquito/taquito': 12.0.3
       '@tezos-domains/core': 1.12.0
-      '@tezos-domains/taquito': 1.12.0_e8823de45262b5664089e5f5d7031ff4
+      '@tezos-domains/taquito': 1.12.0_a32eb4540e11d07a02192aa5b7978a43
       '@types/sha.js': 2.4.0
       bignumber.js: 9.0.2
       sha.js: 2.4.11
@@ -1599,16 +1599,16 @@ packages:
       node-cache: 5.1.2
     dev: false
 
-  /@tezos-domains/taquito-client/1.12.0_e8823de45262b5664089e5f5d7031ff4:
+  /@tezos-domains/taquito-client/1.12.0_a32eb4540e11d07a02192aa5b7978a43:
     resolution: {integrity: sha512-FDWsRaX/IXYd4E3PvMKI9029tee6QCqqVxuu2yW9n40VQeStaG8noE1xT3h1MGhCpWuPVTEL4Ho+jm3j87S6iQ==}
     peerDependencies:
       '@taquito/taquito': '>=8.1.0 <12.0.0'
     dependencies:
-      '@taquito/taquito': 12.0.1
+      '@taquito/taquito': 12.0.3
       '@tezos-domains/core': 1.12.0
-      '@tezos-domains/manager': 1.12.0_e8823de45262b5664089e5f5d7031ff4
+      '@tezos-domains/manager': 1.12.0_a32eb4540e11d07a02192aa5b7978a43
       '@tezos-domains/resolver': 1.12.0
-      '@tezos-domains/taquito': 1.12.0_e8823de45262b5664089e5f5d7031ff4
+      '@tezos-domains/taquito': 1.12.0_a32eb4540e11d07a02192aa5b7978a43
       bignumber.js: 9.0.2
       node-cache: 5.1.2
     transitivePeerDependencies:
@@ -1618,15 +1618,15 @@ packages:
       - '@taquito/tzip16'
     dev: false
 
-  /@tezos-domains/taquito/1.12.0_e8823de45262b5664089e5f5d7031ff4:
+  /@tezos-domains/taquito/1.12.0_a32eb4540e11d07a02192aa5b7978a43:
     resolution: {integrity: sha512-3s9//qFdkZS4newxDZlWw4grKf64fswOaGBpQyr/I2r0NFSGmsXyG+wNXLXkpULsYslSRJPkcbUXxm997jbk5A==}
     peerDependencies:
       '@taquito/rpc': '>=8.1.0 <12.0.0'
       '@taquito/taquito': '>=8.1.0 <12.0.0'
       '@taquito/tzip16': '>=8.1.0 <12.0.0'
     dependencies:
-      '@taquito/taquito': 12.0.1
-      '@taquito/tzip16': 12.0.1
+      '@taquito/taquito': 12.0.3
+      '@taquito/tzip16': 12.0.3
       '@tezos-domains/core': 1.12.0
       bignumber.js: 9.0.2
       node-cache: 5.1.2
