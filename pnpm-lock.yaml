@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@airgap/beacon-sdk': ^2.3.10
+  '@airgap/beacon-sdk': ^2.3.11
   '@babel/core': ^7.12.16
   '@babel/eslint-parser': ^7.12.16
   '@taquito/beacon-wallet': ^12.0.1
@@ -30,7 +30,7 @@ specifiers:
   webpack: ^5.69.1
 
 dependencies:
-  '@airgap/beacon-sdk': 2.3.10
+  '@airgap/beacon-sdk': 2.3.11
   '@taquito/beacon-wallet': 12.0.1
   '@taquito/taquito': 12.0.1
   '@taquito/tzip12': 12.0.1
@@ -71,8 +71,8 @@ packages:
       js-message: 1.0.7
     dev: true
 
-  /@airgap/beacon-sdk/2.3.10:
-    resolution: {integrity: sha512-SfO+9nMZuETELzb6QWedp5Q0Egg1Id4ZM8+suVmnBUuySHGuJJ8TeWZWbSffJAJtavqpTPA6vM1i//Bj/nvW2Q==}
+  /@airgap/beacon-sdk/2.3.11:
+    resolution: {integrity: sha512-9YeA/CLGO5dRbVfuPZx0Daj6bOWmnkVhMhHYRR1iV0fe7THq3GqiukYvFsBIxCi4vjgdMp/04occZxsHIyCvtw==}
     dependencies:
       '@types/chrome': 0.0.115
       '@types/libsodium-wrappers': 0.7.7
@@ -1460,7 +1460,7 @@ packages:
     resolution: {integrity: sha512-DKWy+i/59WjBsXRySJY1fAV+fsptjQzj7VF+qEExqj63ewA5zhelnVn2J2m8JzEQektjs6p9UU+FwnniOkv4Zw==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@airgap/beacon-sdk': 2.3.10
+      '@airgap/beacon-sdk': 2.3.11
       '@taquito/taquito': 12.0.1
     transitivePeerDependencies:
       - debug
