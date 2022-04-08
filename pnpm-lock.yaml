@@ -12,6 +12,7 @@ specifiers:
   '@vue/cli-plugin-babel': ~5.0.0
   '@vue/cli-plugin-eslint': ~5.0.0
   '@vue/cli-service': ~5.0.0
+  axios: ^0.26.1
   bignumber.js: ^9.0.2
   buffer: ^6.0.3
   core-js: ^3.8.3
@@ -35,6 +36,7 @@ dependencies:
   '@taquito/tzip12': 12.0.1
   '@taquito/tzip16': 12.0.1
   '@tezos-domains/taquito-client': 1.12.0_e8823de45262b5664089e5f5d7031ff4
+  axios: 0.26.1
   bignumber.js: 9.0.2
   buffer: 6.0.3
   core-js: 3.21.1
