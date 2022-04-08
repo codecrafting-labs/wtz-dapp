@@ -4,7 +4,10 @@
       <div v-if="wtz.loading" class="loader">
         <img width="100" src="../assets/ripple.svg" alt="" />
       </div>
-      <h2 style="margin-bottom: 16px">Mint</h2>
+      <h2 style="margin-bottom: 16px">
+        <template v-if="action === 'Wrap'">Mint WTZ</template>
+        <template v-else>Redeem XTZ</template>
+      </h2>
       <form @submit="submitAction">
         <div>
           <small style="padding-left: 30px" class="subtle-color">
@@ -13,7 +16,7 @@
           <div style="padding-top: 5px">
             <dex-dropdown
               :valueUsd="
-                inputValue * (action === 'Wrap' ? prices.xtz : prices.wtz)
+                getValueUsd(inputValue, action === 'Wrap' ? 'xtz' : 'wtz')
               "
               :symbol="input.symbol"
               :icon="input.icon"
@@ -48,7 +51,7 @@
               </div>
               <div v-if="error" class="col d-flex justify-content-end">
                 <small
-                  style="text-align: center; color: #8a1d1d; margin-top: 3px"
+                  style="text-align: center; color: #f64947; margin-top: 3px"
                 >
                   {{ error }}
                 </small>
@@ -85,7 +88,7 @@
           <div style="padding-top: 5px">
             <dex-dropdown
               :valueUsd="
-                outputValue * (action !== 'Wrap' ? prices.xtz : prices.wtz)
+                getValueUsd(outputValue, action !== 'Wrap' ? 'xtz' : 'wtz')
               "
               :icon="output.icon"
               :symbol="output.symbol"
@@ -119,7 +122,7 @@
 
         <div style="margin: 12px 0 18px; padding: 0 15px">
           <button type="submit" style="width: 100%" class="button">
-            {{ action }} {{ action === "Wrap" ? "XTZ" : "WTZ" }}
+            {{ action === "Wrap" ? "Mint" : "Redeem" }} {{ action !== "Wrap" ? "XTZ" : "WTZ" }}
           </button>
         </div>
         <div style="padding: 0 15px">
@@ -134,7 +137,7 @@
                 ><span style="font-size: 10px" class="subtle-color"
                   >~${{
                     vueNumberFormat(
-                      action === "Wrap" ? prices.xtz : prices.wtz,
+                      getValueUsd(1, action === "Wrap" ? "xtz" : "wtz"),
                       { prefix: "", decimal: ".", thousand: ",", precision: 2 }
                     )
                   }}</span
@@ -153,7 +156,7 @@
                 ><span style="font-size: 10px" class="subtle-color"
                   >~${{
                     vueNumberFormat(
-                      action !== "Wrap" ? prices.xtz : prices.wtz,
+                      getValueUsd(1, action !== "Wrap" ? "xtz" : "wtz"),
                       { prefix: "", decimal: ".", thousand: ",", precision: 2 }
                     )
                   }}</span
@@ -165,7 +168,8 @@
               <small class="subtle-color"> Transaction fee </small>
             </div>
             <div class="col-6">
-              <small>~$0.001</small>
+              <small v-if="action !== 'Wrap'">0.001%</small>
+              <small v-else>0.000%</small>
             </div>
           </div>
         </div>
@@ -210,9 +214,7 @@ export default {
   },
 
   mounted() {
-    this.getCurrentPrices().then(() => {
-      console.log(this.prices);
-    });
+    this.getCurrentPrices();
   },
 
   methods: {
@@ -226,6 +228,20 @@ export default {
 
     refresh() {
       this.loadWtzData();
+    },
+
+    getValueUsd(input, base = 'xtz') {
+      if (base === 'xtz') {
+        return this.prices.xtz * input;
+      } else {
+        const inputAsXtz = BigNumber(input)
+          .times(this.wtz.swapRatioPrecision)
+          .div(this.wtz.swapRatio)
+          .times(1 - 0.001)
+          .toNumber()
+          .toFixed(6);
+        return this.prices.xtz * inputAsXtz;
+      }
     },
 
     handleSwitch() {
@@ -283,7 +299,7 @@ export default {
         evt.preventDefault();
       }
     },
-    submitAction(e) {
+    async submitAction(e) {
       e.preventDefault();
 
       if (this.inputValue < 0.000001) {
@@ -292,9 +308,9 @@ export default {
       }
 
       if (this.action === "Wrap") {
-        this.wtzWrap(this.inputValue);
+        await this.wtzWrap(this.inputValue);
       } else {
-        this.wtzUnwrap(this.inputValue);
+        await this.wtzUnwrap(this.inputValue);
       }
       this.updateWalletBalance();
 
@@ -359,7 +375,7 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff23;
+  background: rgba(0, 0, 0, 0.50);
   z-index: 9000;
 }
 </style>

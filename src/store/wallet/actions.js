@@ -2,19 +2,35 @@ import { requestPermissions, getActiveAccount, clearActiveAccount, wallet, Tezos
 import { BigNumber } from "bignumber.js";
 import tzdomains from "@/utils/tezos-domains";
 
+const setWallet = async ({ commit, dispatch }, account) => {
+  const walletDisplay = `${account.address.substr(0, 6)}...${account.address.substr(-6)}`;
+
+  commit("updateWallet", {
+    connected: true,
+    pkh: account.address,
+    pkhDomain: walletDisplay,
+    updateBalanceInt: null,
+  });
+
+  tzdomains.resolveAddressToName(account.address, walletDisplay).then((res) => {
+    commit("updateWallet", {
+      connected: true,
+      pkh: account.address,
+      pkhDomain: res,
+      updateBalanceInt: setInterval(() => dispatch("updateWalletBalance"), 30 * 1000),
+    });
+  });
+
+  dispatch("updateWalletBalance");
+  dispatch("walletConnected");
+};
+
 export default {
   async connectWallet({ commit, state, dispatch }) {
     if (!state.connected) {
       return getActiveAccount().then((account) => {
         if (account) {
-          commit("updateWallet", {
-            connected: true,
-            pkh: account.address,
-            pkhDomain: tzdomains.resolveAddressToName(account.address, `${account.address.substr(0, 6)}...${account.address.substr(-6)}`),
-            updateBalanceInt: setInterval(() => dispatch("updateWalletBalance"), 15 * 1000),
-          });
-          dispatch("updateWalletBalance");
-          dispatch("walletConnected");
+          setWallet({ commit, dispatch }, account);
         }
       });
     }
@@ -26,7 +42,7 @@ export default {
       commit("updateWallet", {
         connected: false,
         pkh: "",
-        pkhDomain: Promise.resolve(""),
+        pkhDomain: "",
         updateBalanceInt: null,
       });
       dispatch("updateWalletBalance");
@@ -44,13 +60,7 @@ export default {
   async checkWalletConnected({ commit, dispatch }) {
     wallet.client.getActiveAccount().then((account) => {
       if (account) {
-        commit("updateWallet", {
-          connected: true,
-          pkh: account.address,
-          pkhDomain: tzdomains.resolveAddressToName(account.address, `${account.address.substr(0, 6)}...${account.address.substr(-6)}`),
-          updateBalanceInt: setInterval(() => dispatch("updateWalletBalance"), 15 * 1000),
-        });
-        dispatch("updateWalletBalance");
+        setWallet({ commit, dispatch }, account);
       }
     });
   },

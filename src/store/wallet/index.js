@@ -8,6 +8,7 @@ export default {
     connected: false,
     network: NetworkType.MAINNET,
     pkh: "",
+    pkhDomain: "",
     balance: new BigNumber(0),
     updateBalanceInt: null,
   },

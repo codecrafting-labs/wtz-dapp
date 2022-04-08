@@ -10,7 +10,7 @@
       <home-page></home-page>
     </main>
     <footer>
-      <p class="subtle-color">Copyright 2021</p>
+      <p class="subtle-color">Built by <a href="https://cclabs.tech/" target="_blank">Codecrafting Labs</a>. Made with &lt;<i class="fas fa-heart" aria-hidden="true" style="color: #f64947;"></i>&gt;</p>
     </footer>
   </div>
 </template>
@@ -105,6 +105,10 @@ button {
   padding: 14px 24px;
 }
 
+.button:hover {
+  box-shadow: 0px 0px 12px 2px rgba(255, 255, 255, 0.25);
+}
+
 .btn-outline {
   border: solid 1.5px transparent;
   border-radius: 80px;
@@ -118,10 +122,10 @@ button {
 footer {
   margin-top: auto;
   background: #1e1e1e;
-  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  box-shadow: 4px -8px 8px rgba(0, 0, 0, 0.15);
+  padding: 24px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .container,

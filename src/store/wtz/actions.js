@@ -1,14 +1,8 @@
 import tzkt from "@/utils/tzkt";
-import coingecko from "@/utils/coingecko";
 import { getWalletContract } from "@/utils/tezos";
 import { BigNumber } from "bignumber.js";
 
 export default {
-  async updateWtzXtzUsdVwap({ commit }) {
-    return coingecko.getXtzUsdPrice().then((price) => {
-      commit("updateWtzXtzUsdVwap", price);
-    });
-  },
 
   async updateWtzStorage({ state }) {
     return tzkt.getContractStorage(state.contractSwap).then((resp) => {
@@ -17,8 +11,6 @@ export default {
   },
 
   async loadWtzData({ state, commit, dispatch }) {
-    dispatch("updateWtzXtzUsdVwap");
-
     if (!state.loading) {
       commit("updateWtzLoading", true);
 
@@ -37,6 +29,10 @@ export default {
   },
 
   async getWtzBalance({ state, rootState }) {
+    if (!rootState.wallet.connected) {
+      return 0;
+    }
+
     return tzkt
       .getContractBigMapKeys(state.contractWtz, "ledger", {
         "key.address": rootState.wallet.pkh,
@@ -51,6 +47,11 @@ export default {
         }
         return tokenBal.toNumber();
       });
+  },
+
+  async updateWalletBalance({ commit, dispatch }) {
+    const wtzBalance = await dispatch("getWtzBalance");
+    commit("updateWtzBalance", wtzBalance);
   },
 
   async wtzWrap({ state, rootState, commit, dispatch }, amountToWrap) {

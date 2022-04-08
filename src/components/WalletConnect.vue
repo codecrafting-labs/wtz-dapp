@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button @click="disconnectWallet" v-if="wallet.pkh" class="button">
-      {{ strFomating(wallet.pkh) }}
+    <button @click="disconnectWallet" v-if="wallet.connected" class="button">
+      {{ wallet.pkhDomain }}
     </button>
-    <button @click="connectWallet" v-if="!wallet.pkh" class="button">
+    <button @click="connectWallet" v-if="!wallet.connected" class="button">
       Connect Wallet
     </button>
   </div>
@@ -18,9 +18,6 @@ export default {
   },
   methods: {
     ...mapActions(["connectWallet", "disconnectWallet"]),
-    strFomating(str = "") {
-      return str.substring(0, 4) + "..." + str.substring(str.length - 4);
-    },
   },
 };
 </script>

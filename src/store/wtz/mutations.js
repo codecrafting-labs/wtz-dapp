@@ -3,10 +3,6 @@ export default {
     state.loading = isLoading;
   },
 
-  updateWtzXtzUsdVwap(state, price) {
-    state.usdVwap = price;
-  },
-
   updateWtzTotalTvlTez(state, total) {
     state.totalTvlTez = total;
   },

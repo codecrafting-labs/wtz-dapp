@@ -7,8 +7,8 @@
     <div class="row">
       <div v-if="dexTab !== 'dex'" class="col-lg-6">
         <h1>
-          Meet WTZ, a new FA2 token fully collateralized by XTZ, fully fungible,
-          and oh so rewarding.
+          Meet WTZ, an FA2 token fully collateralized by XTZ, fully fungible,
+          and oh so rewarding. DeFi, get ready.
         </h1>
 
         <div style="margin-top: 32px"></div>
@@ -25,10 +25,10 @@
 
         <div style="margin-top: 46px">
           <div class="flex-row">
-            <button style="margin-right: 24px" class="button">
+            <!-- <button style="margin-right: 24px" class="button">
               Learn More
-            </button>
-            <button class="button btn-outline">Learn More</button>
+            </button> -->
+            <button class="button btn-outline" @click="gotoLearnMore">Learn More</button>
           </div>
         </div>
       </div>
@@ -72,6 +72,9 @@ export default {
     handleTabClick() {
       this.dexTab = this.dexTab !== "dex" ? "dex" : "home";
     },
+    gotoLearnMore() {
+      window.location.href = "https://crunchytez.medium.com/hello-defi-meet-wtz-1116f3905b8d";
+    }
   },
 };
 </script>
