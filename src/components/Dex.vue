@@ -168,8 +168,8 @@
               <small class="subtle-color"> Transaction fee </small>
             </div>
             <div class="col-6">
-              <small v-if="action !== 'Wrap'">0.001%</small>
-              <small v-else>0.000%</small>
+              <small v-if="action !== 'Wrap'">0.1%</small>
+              <small v-else>0.0%</small>
             </div>
           </div>
         </div>
