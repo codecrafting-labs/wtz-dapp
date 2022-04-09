@@ -4,10 +4,10 @@
       <div v-if="wtz.loading" class="loader">
         <img width="100" src="../assets/ripple.svg" alt="" />
       </div>
-      <h2 style="margin-bottom: 16px">
+      <h3 style="margin-bottom: 16px">
         <template v-if="action === 'Wrap'">Mint WTZ</template>
         <template v-else>Redeem XTZ</template>
-      </h2>
+      </h3>
       <form @submit="submitAction">
         <div>
           <small style="padding-left: 30px" class="subtle-color">
@@ -27,7 +27,7 @@
                 v-model="inputValue"
                 required
                 @input="calculateOutput(inputValue)"
-                placeholder="VALUE"
+                placeholder="0"
                 class="input-elem"
               />
             </dex-dropdown>
