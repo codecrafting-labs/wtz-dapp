@@ -7,9 +7,13 @@
     <div class="row">
       <div v-if="dexTab !== 'dex'" class="col-lg-6">
         <h1>
-          Meet WTZ, an FA2 token fully collateralized by XTZ, fully fungible,
-          and oh so rewarding. DeFi, get ready.
+          Meet WTZ.
         </h1>
+        <br>
+        <h2>
+          A FA2 token fully collateralized by XTZ, fully fungible,
+          and oh so rewarding. DeFi, get ready.
+        </h2>
 
         <div style="margin-top: 32px"></div>
         <p class="text subtle-color">

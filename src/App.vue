@@ -66,7 +66,7 @@ header {
 }
 
 main {
-  padding: 120px 0px 100px;
+  padding: 20px 0px 100px;
 }
 
 h1 {
@@ -98,7 +98,7 @@ button {
   min-height: 50px;
   background: linear-gradient(270deg, #1161fe 7.1%, #5343ba 95.16%);
   border-radius: 24px;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   font-family: "Roboto";
