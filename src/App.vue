@@ -65,6 +65,11 @@ header {
   padding: 32px;
 }
 
+nav img {
+  width: 50px;
+  height: 50px;
+}
+
 main {
   padding: 120px 0px 100px;
 }

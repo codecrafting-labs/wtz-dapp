@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const makeReqest = async (uri, params = {}) => {
-  return axios.get(`${"https://api.tzkt.io"}${uri}`, {
+  return axios.get(`${process.env.VUE_APP_TZKT_API_URL}${uri}`, {
     params: { limit: 1000, ...params },
   });
 };

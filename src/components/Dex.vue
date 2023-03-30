@@ -197,7 +197,7 @@ export default {
       output: {
         name: "Wrapped Tezos",
         symbol: "WTZ",
-        icon: "https://ipfs.fleek.co/ipfs/bafybeidwsid6fvv4vxbqja7er3b4exsht5r7umv6hpz7rc3ujg7xilhwv4",
+        icon: require("../assets/logo.png"),
       },
       outputValue: null,
       inputValue: null,

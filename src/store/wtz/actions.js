@@ -15,6 +15,7 @@ export default {
       commit("updateWtzLoading", true);
 
       const storage = await dispatch("updateWtzStorage");
+      console.log("storage", storage);
       commit(
         "updateWtzTotalTvlTez",
         BigNumber(storage.totalXtzSum).div(BigNumber(10).pow(6)).toNumber()
@@ -55,6 +56,8 @@ export default {
   },
 
   async wtzWrap({ state, rootState, commit, dispatch }, amountToWrap) {
+    commit("updateWtzLoading", true);
+
     const wtzSwap = await getWalletContract(state.contractSwap);
     const amount = BigNumber(amountToWrap)
       .times(BigNumber(10).pow(6))
@@ -62,8 +65,6 @@ export default {
       .toNumber();
 
     try {
-      commit("updateWtzLoading", true);
-
       await dispatch("connectWallet");
 
       const tx = await wtzSwap.methods
@@ -81,6 +82,8 @@ export default {
   },
 
   async wtzUnwrap({ state, rootState, commit, dispatch }, amountToUnwrap) {
+    commit("updateWtzLoading", true);
+
     const wtzSwap = await getWalletContract(state.contractSwap);
     const amount = BigNumber(amountToUnwrap)
       .times(BigNumber(10).pow(6))
@@ -88,8 +91,6 @@ export default {
       .toNumber();
 
     try {
-      commit("updateWtzLoading", true);
-
       await dispatch("connectWallet");
 
       const tx = await wtzSwap.methods
