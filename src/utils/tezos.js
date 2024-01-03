@@ -44,4 +44,8 @@ const getWalletContract = async (address) => {
   return Tezos.wallet.at(address);
 };
 
-export { wallet, getActiveAccount, requestPermissions, clearActiveAccount, getWalletContract, Tezos };
+const getContract = async (address) => {
+  return Tezos.contract.at(address);
+};
+
+export { wallet, getActiveAccount, requestPermissions, clearActiveAccount, getWalletContract, getContract, Tezos };

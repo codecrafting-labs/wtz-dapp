@@ -1,26 +1,20 @@
 import tzkt from "@/utils/tzkt";
-import { getWalletContract } from "@/utils/tezos";
+import { getWalletContract, getContract } from "@/utils/tezos";
 import { BigNumber } from "bignumber.js";
 
 export default {
 
-  async updateWtzStorage({ state }) {
-    return tzkt.getContractStorage(state.contractSwap).then((resp) => {
-      return resp.data;
-    });
+  async getSwapRatio({ state }) {
+    const swapK = await getContract(state.contractProxy);
+    return swapK.contractViews.getSwapRatio().executeView({ viewCaller: state.contractProxy });
   },
 
   async loadWtzData({ state, commit, dispatch }) {
     if (!state.loading) {
       commit("updateWtzLoading", true);
 
-      const storage = await dispatch("updateWtzStorage");
-      console.log("storage", storage);
-      commit(
-        "updateWtzTotalTvlTez",
-        BigNumber(storage.totalXtzSum).div(BigNumber(10).pow(6)).toNumber()
-      );
-      commit("updateWtzSwapRatio", BigNumber(storage.swapRatio));
+      const swapRatio = await dispatch("getSwapRatio");
+      commit("updateWtzSwapRatio", swapRatio);
 
       const wtzBalance = await dispatch("getWtzBalance");
       commit("updateWtzBalance", wtzBalance);
@@ -58,7 +52,7 @@ export default {
   async wtzWrap({ state, rootState, commit, dispatch }, amountToWrap) {
     commit("updateWtzLoading", true);
 
-    const wtzSwap = await getWalletContract(state.contractSwap);
+    const wtzSwap = await getWalletContract(state.contractProxy);
     const amount = BigNumber(amountToWrap)
       .times(BigNumber(10).pow(6))
       .idiv(1)
@@ -84,7 +78,7 @@ export default {
   async wtzUnwrap({ state, rootState, commit, dispatch }, amountToUnwrap) {
     commit("updateWtzLoading", true);
 
-    const wtzSwap = await getWalletContract(state.contractSwap);
+    const wtzSwap = await getWalletContract(state.contractProxy);
     const amount = BigNumber(amountToUnwrap)
       .times(BigNumber(10).pow(6))
       .idiv(1)
