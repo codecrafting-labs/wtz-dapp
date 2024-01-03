@@ -3,10 +3,6 @@ export default {
     state.loading = isLoading;
   },
 
-  updateWtzTotalTvlTez(state, total) {
-    state.totalTvlTez = total;
-  },
-
   updateWtzBalance(state, balance) {
     state.balance = balance;
   },
